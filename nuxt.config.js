@@ -1,8 +1,7 @@
-const fs = require('fs');
+require('dotenv').config();
 
-if (fs.existsSync('./.env')) {
-  require('dotenv').config();
-}
+const url = require('url');
+var urlData = url.parse(process.env.BASE_URL);
 
 module.exports = {
   mode: 'universal',
@@ -88,8 +87,8 @@ module.exports = {
   },
 
   server: {
-    port: 3000, // default: 3000
-    host: 'localhost', // default: localhost,
-    timing: false
+    port: urlData.port, // default: 3000
+    host: urlData.hostname, // default: localhost,
+    timing: false,
   },
 }

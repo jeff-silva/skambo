@@ -26,7 +26,7 @@
 					<b-nav-item-dropdown right v-if="user">
 						<!-- Using 'button-content' slot -->
 						<template v-slot:button-content>
-						<em>{{ user.displayName||user.email }}</em>
+							&nbsp; <em>{{ user.displayName||user.email }}</em>
 						</template>
 						<nuxt-link class="dropdown-item" to="/settings">Settings</nuxt-link>
 						<b-dropdown-item href="#" @click="logout();">Sign Out</b-dropdown-item>
@@ -85,6 +85,19 @@ export default {
 	color:#444;
 	outline:0!important;
 	box-shadow:none !important;
+}
+
+.header-nav-vue .navbar-toggler {
+	outline: 0 !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
+.header-nav-vue .dropdown-menu {
+	margin: 10px 0px 0px 0px;
+	border-radius: 0px;
+	border: none;
+	box-shadow: 0px 0px 10px 0px #00000044;
 }
 
 /*.header-nav-vue .navbar-collapse {
